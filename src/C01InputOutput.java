@@ -11,7 +11,7 @@ public class C01InputOutput {
         System.out.println(my_string + a);
 
 //        숫자와 숫자를 더하면 더하기 연산이 된다
-        System.out.println(10+20);
+        System.out.println(10 + 20);
 
 //        INPUT = System.in (키보드 입력) + Scanner (입력을 위한 클래스)
         Scanner myScan = new Scanner(System.in);
@@ -29,7 +29,7 @@ public class C01InputOutput {
         System.out.println("Enter two integers: ");
         int num1 = myScan.nextInt();
         int num2 = myScan.nextInt();
-        System.out.printf("%d + %d equals %d", num1, num2, num1+num2);
+        System.out.printf("%d + %d equals %d", num1, num2, num1 + num2);
 
 //        nextDouble통해서 소수점 입력 후 출력해주세요
         System.out.println("Enter a double: ");
