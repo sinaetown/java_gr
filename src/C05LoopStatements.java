@@ -120,5 +120,20 @@ public class C05LoopStatements {
                 System.out.println(arr[i][j]);
             }
         }
+
+//      라벨문
+        loop1:
+        for(int i = 0; i < 5; i++){
+            loop2:
+            for(int j = 0; j < 5; j++){
+                System.out.println("Hello World");
+                if(j==2){
+//                    break; //Hello World 15번 출력
+//                    break loop1; //Hello World 3번 출력
+                }
+            }
+        }
+
+//
     }
 }

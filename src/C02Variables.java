@@ -103,9 +103,17 @@ public class C02Variables {
 //        변수값 변경
         var1 = 20;
 //        선언만 한 뒤에 나중에 초기화
-        int var2; // int는 선언만 했을 경우, 값은 0으로 초기화 <-> string일 경우는 null, boolean일 경우는 false로 초기화
+        int var2; // 지역변수는 int는 선언만 했을 경우, 값은 0으로 초기화되지 않으나 객체로 선언될 때는 0으로 초기화
+//        <-> string일 경우는 null, boolean일 경우는 false로 초기화
         var2 = 20;
+//        객체로 만들 때는 0으로 초기화
+        int[] arr = new int[5];
+        System.out.println("When just declared: " + arr[0]);
 
+//        cf) class의 멤버 변수 인 경우 int, String 등의 자료형들이 초기화됨,
+//        기본형 변수는 기본형의 타입에 맞게 초기화, 참조형 데이터는 null로 초기화
+
+//        cf) 지역변수인 경우 초기화 되지 않음
 //        상수
         final int AGES = 20;
 //        상수는 값의 재할당이 불가능 AGES = 30 -> 에러 발생
