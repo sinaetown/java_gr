@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.OptionalInt;
 
 public class C07Array {
     public static void main(String[] args) {
@@ -131,5 +132,119 @@ public class C07Array {
                 .mapToInt(z -> z) // Integer를 int로 변환
                 .toArray(); // 배열로 변환
         System.out.println("Reverse order using method #3 using stream : " + Arrays.toString(new_arr11));
+
+        //    숫자 조합의 합 : 각기 다른 숫자의 배열이 있을 때 만들어질 수 있는 2개의 조합의 합을 출력하라
+        int[] int_arr12 = new int[]{10, 20, 30, 40, 50, 60};
+        System.out.println("Combination Sum:");
+        for (int z = 0; z < int_arr12.length; z++) {
+            for (int zz = z + 1; zz < int_arr12.length; zz++) {
+                System.out.printf("%d + %d = %d \n", int_arr12[z], int_arr12[zz], (int_arr12[z] + int_arr12[zz]));
+            }
+        }
+
+//        예제: 중복 제거하기
+        int[] int_arr13 = {10, 10, 40, 5, 7};
+//        배열 복사
+//        int[] new_arr13 = Arrays.copyOfRange(int_arr13, 0, 3); // [10, 10, 40]
+
+        Arrays.sort(int_arr13);
+        int index = 0;
+        int[] new_arr13 = new int[int_arr13.length];
+        for (int i = 0; i < int_arr13.length; i++) {
+            if (i == int_arr13.length - 1) {
+                new_arr13[index++] = int_arr13[i];
+                break;
+            }
+            if (int_arr13[i] != int_arr13[i + 1]) {
+                new_arr13[index++] = int_arr13[i];
+            }
+        }
+        new_arr13 = Arrays.copyOfRange(new_arr13, 0, index);
+        System.out.println("Remove repeated number: " + Arrays.toString(new_arr13));
+
+//        예제: 배열의 검색
+        int[] int_arr14 = {5, 3, 1, 8, 7};
+        int target = 8;
+
+        for (int i = 0; i < int_arr14.length; i++) {
+            if (target == int_arr14[i]) {
+                System.out.println("Target is at the index of: " + i);
+            }
+        }
+//        Binary Search (이진 검색)
+//        사전에 오름차순 정렬이 되어있어야함
+//        Arrays.binarySearch();
+        int[] int_arr15 = {6, 4, 3, 1, 2, 7, 9, 13, 11, 8};
+        Arrays.sort(int_arr15);
+        int arr15_answer = Arrays.binarySearch(int_arr15, target);
+        System.out.println("Finding Index : " + arr15_answer);
+
+//        배열 비교하기
+        int[] arr = {10, 20, 30};
+        int[] arr2 = {10, 20, 30};
+        System.out.println("Comparing arrays: " + Arrays.equals(arr, arr2));
+
+//        배열 복사 :copyOf(배열, end), copyOfRange(배열, start, end)
+        int[] int_arr16 = {10, 20, 30, 40, 50};
+        int[] new_arr16_1 = Arrays.copyOf(int_arr16, 10);
+        int[] new_arr16_2 = Arrays.copyOfRange(int_arr16, 1, 4);
+        System.out.println("Array created with copyOf() : " + Arrays.toString(new_arr16_1));
+        System.out.println("Array created with copyOfRange() : " + Arrays.toString(new_arr16_2));
+
+//        2차원 배열 할당
+        int[][] int_arr17 = new int[2][3];
+        int_arr17[0][0] = 1;
+        int_arr17[0][1] = 2;
+        int_arr17[0][2] = 3;
+        int_arr17[1][0] = 4;
+        int_arr17[1][1] = 5;
+        int_arr17[1][2] = 6;
+
+        System.out.println("2D array: " + Arrays.deepToString(int_arr17));
+
+//        2차원 가변배열 선언 및 할당
+        int[][] int_arr18 = new int[3][];
+        int_arr18[0] = new int[1];
+        int_arr18[1] = new int[2];
+        int_arr18[2] = new int[3];
+
+//        int_arr18[0][0] = 10;
+//        int_arr18[1][0] = 20;
+//        int_arr18[2][0] = 30; -> 안 됨!
+
+        System.out.println("2D array: " + Arrays.deepToString(int_arr18));
+
+//        가변배열 리터럴 방식
+        int[][] int_arr19 = {{10}, {10,20}, {10,20,30}};
+        System.out.println("2D array: " + Arrays.deepToString(int_arr19));
+
+//        예제: [3][4] 사이즈의 배열 선언 뒤
+//        1,2,3~12까지의 숫자값 각 배열에 할당
+        int[][] int_arr20 = new int[3][4];
+        int number = 1;
+        for(int i = 0; i < int_arr20.length; i++){
+            for(int m = 0; m < int_arr20[i].length; m++){
+                int_arr20[i][m] = number++;
+            }
+        }
+        System.out.println("2D array: " + Arrays.deepToString(int_arr20));
+
+//        예제: 가변 배열 만들기
+//        전체 사이즈 : 5
+//        각 배열마다 사이즈 1, 2, 3, 4, 5로 커지도록
+//        1부터 시작해서 값 집어넣기
+        int[][] int_arr21 = new int[5][];
+        int size = 1;
+        int element = 10;
+        for(int i = 0; i < int_arr21.length; i++){
+            int_arr21[i] = new int[size++];
+        }
+        for(int i = 0; i < int_arr21.length; i++){
+            for(int ii = 0; ii < int_arr21[i].length; ii++){
+                int_arr21[i][ii]= element;
+            }
+            element+=10;
+        }
+        System.out.println("2D array: " + Arrays.deepToString(int_arr21));
     }
 }
