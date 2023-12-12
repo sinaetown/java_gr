@@ -133,7 +133,8 @@ public class C07Array {
                 .toArray(); // 배열로 변환
         System.out.println("Reverse order using method #3 using stream : " + Arrays.toString(new_arr11));
 
-        //    숫자 조합의 합 : 각기 다른 숫자의 배열이 있을 때 만들어질 수 있는 2개의 조합의 합을 출력하라
+//        숫자 조합의 합 : 각기 다른 숫자의 배열이 있을 때 만들어질 수 있는 2개의 조합의 합을 출력하라
+//        재귀적으로도 풀 수 있다!
         int[] int_arr12 = new int[]{10, 20, 30, 40, 50, 60};
         System.out.println("Combination Sum:");
         for (int z = 0; z < int_arr12.length; z++) {
@@ -215,15 +216,15 @@ public class C07Array {
         System.out.println("2D array: " + Arrays.deepToString(int_arr18));
 
 //        가변배열 리터럴 방식
-        int[][] int_arr19 = {{10}, {10,20}, {10,20,30}};
+        int[][] int_arr19 = {{10}, {10, 20}, {10, 20, 30}};
         System.out.println("2D array: " + Arrays.deepToString(int_arr19));
 
 //        예제: [3][4] 사이즈의 배열 선언 뒤
 //        1,2,3~12까지의 숫자값 각 배열에 할당
         int[][] int_arr20 = new int[3][4];
         int number = 1;
-        for(int i = 0; i < int_arr20.length; i++){
-            for(int m = 0; m < int_arr20[i].length; m++){
+        for (int i = 0; i < int_arr20.length; i++) {
+            for (int m = 0; m < int_arr20[i].length; m++) {
                 int_arr20[i][m] = number++;
             }
         }
@@ -236,14 +237,14 @@ public class C07Array {
         int[][] int_arr21 = new int[5][];
         int size = 1;
         int element = 10;
-        for(int i = 0; i < int_arr21.length; i++){
+        for (int i = 0; i < int_arr21.length; i++) {
             int_arr21[i] = new int[size++];
         }
-        for(int i = 0; i < int_arr21.length; i++){
-            for(int ii = 0; ii < int_arr21[i].length; ii++){
-                int_arr21[i][ii]= element;
+        for (int i = 0; i < int_arr21.length; i++) {
+            for (int ii = 0; ii < int_arr21[i].length; ii++) {
+                int_arr21[i][ii] = element;
             }
-            element+=10;
+            element += 10;
         }
         System.out.println("2D array: " + Arrays.deepToString(int_arr21));
     }
