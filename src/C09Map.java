@@ -82,5 +82,24 @@ public class C09Map {
 
 //        Students.put(a, Students.getOrDefault(a, 0)+1);
         System.out.println("Students: " + Students);
+
+//        LinkedHashMap : 데이터 삽입 순서 유지
+        System.out.println("---LinkedHashMap and TreeMap---");
+        Map<String, Integer> linkedMap1 = new LinkedHashMap<>();
+        linkedMap1.put("hello5", 1);
+        linkedMap1.put("hello4", 1);
+        linkedMap1.put("hello3", 1);
+        linkedMap1.put("hello2", 1);
+        linkedMap1.put("hello1", 1);
+        System.out.println("Printing LinkedMap1 : " + linkedMap1);
+
+        Map<String, Integer> treeMap1 = new TreeMap<>();
+        treeMap1.put("hello5", 1);
+        treeMap1.put("hello4", 1);
+        treeMap1.put("hello3", 1);
+        treeMap1.put("hello2", 1);
+        treeMap1.put("hello1", 1);
+        System.out.println("Printing treeMap1 : " + treeMap1);
+
     }
 }
