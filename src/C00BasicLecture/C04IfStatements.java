@@ -1,3 +1,5 @@
+package C00BasicLecture;
+
 import java.util.*;
 
 public class C04IfStatements {

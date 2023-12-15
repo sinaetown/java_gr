@@ -1,3 +1,5 @@
+package C00BasicLecture;
+
 import java.util.*;
 import java.util.stream.Collectors;
 

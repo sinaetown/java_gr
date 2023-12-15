@@ -1,3 +1,5 @@
+package C00BasicLecture;
+
 public class C05LoopPractice {
     public static void main(String[] args) {
 ////        EX1) 짝수의 합 계산하기

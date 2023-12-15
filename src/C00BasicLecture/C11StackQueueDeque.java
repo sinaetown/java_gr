@@ -1,7 +1,9 @@
+package C00BasicLecture;
+
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 
-public class C11StackQueue {
+public class C11StackQueueDeque {
     public static void main(String[] args) {
         Stack<Integer> mySt = new Stack<>();
         mySt.push(10);
@@ -101,6 +103,7 @@ public class C11StackQueue {
         System.out.println(blockingQ);
 
 //        PriorityQueue
+        System.out.println("---PriorityQueue---");
         Queue<Integer> pq = new PriorityQueue<>();
         pq.add(30);
         pq.add(20);
@@ -112,5 +115,18 @@ public class C11StackQueue {
         while (!pq.isEmpty()) {
             System.out.println("Priority Queue when polling : " + pq.poll());
         }
+//        Deque
+//        ArrayDeque은 양방향에서 데이터를 삽입 / 제거할 수 있다
+//        성능 빠름
+        System.out.println("---ArrayDeque---");
+        Deque<Integer> myDeque = new ArrayDeque<>();
+        myDeque.addFirst(10);
+        myDeque.addFirst(20);
+        myDeque.addLast(30);
+        System.out.println("ArrayDeque : " + myDeque);
+        myDeque.pollFirst(); //20 out
+        myDeque.pollLast(); //30 out
+        System.out.println("ArrayDeque after poll() : " + myDeque);
+
     }
 }

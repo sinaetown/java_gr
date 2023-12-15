@@ -1,3 +1,5 @@
+package C00BasicLecture;
+
 public class C1101StackFunction1 {
     public static void main(String[] args) {
         System.out.println("Main Function Start");

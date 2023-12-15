@@ -1,3 +1,5 @@
+package C00BasicLecture;
+
 public class C00HelloWorld {
     public static void main(String[] args) {
 //        문자열 출력 시 쌍따옴표로 문자열을 감싼다

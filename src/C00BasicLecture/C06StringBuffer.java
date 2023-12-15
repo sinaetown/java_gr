@@ -1,3 +1,5 @@
+package C00BasicLecture;
+
 public class C06StringBuffer {
     public static void main(String[] args) {
 
