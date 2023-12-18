@@ -90,7 +90,7 @@ public class C02Variables {
 //        명시적 타입 변환
         char my_char2 = 'b';
         int char_num = (int) my_char2;
-//        int a가 1, int b가 4일 때 둘을 나눈 값을 int에 담아 출력, double에 각각 담아 출력
+//        int first가 1, int second가 4일 때 둘을 나눈 값을 int에 담아 출력, double에 각각 담아 출력
         int first = 1;
         int second = 4;
         int res1 = first / second;
