@@ -7,7 +7,7 @@ public class C1207RecurPermutation {
     static int answer = 0;
 
     public static void main(String[] args) {
-//        Permutaiton For loop
+//        Permutation For loop
         List<Integer> l = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
         int n = 2;
 
@@ -15,7 +15,7 @@ public class C1207RecurPermutation {
         boolean[] visited = new boolean[l.size()];
         List<Integer> temp = new ArrayList<>();
 
-        permuRecur(l, n, permu, visited, 0, temp);
+        permuRecur(l, n, permu, visited, temp);
         System.out.println("Permutation print: " + permu);
 
 
@@ -58,6 +58,8 @@ public class C1207RecurPermutation {
         System.out.println(answer);
     }
 
+
+    //    전체 순열에서 합계가 가장 값 (합) 찾기
     static void findMax2(List<Integer> l, int n,
                          boolean[] findMax2Visited, int temp, int count) {
         if (count == n) {
@@ -79,6 +81,7 @@ public class C1207RecurPermutation {
         }
     }
 
+    //    3개 순열에서 합계가 가장 값 (합) 찾기
     static void findMax(List<Integer> l, int n, List<Integer> findMaxList,
                         boolean[] findMaxVisited, List<Integer> findMaxTemp, int limitMax) {
         int sum = 0;
@@ -102,6 +105,7 @@ public class C1207RecurPermutation {
         }
     }
 
+    //    합계가 6이상 모든 순열 add
     static void overSixAll(List<Integer> l, int n, List<List<Integer>> overSixAll,
                            boolean[] overSixAllVisited, List<Integer> overSixAllTemp, int limit) {
         int sum = 0;
@@ -126,6 +130,7 @@ public class C1207RecurPermutation {
         }
     }
 
+    //        합계가 6 이상인 2개의 순열만 add
     static void overSix(List<Integer> l, int n, List<List<Integer>> overSixList,
                         boolean[] overSixVisited, List<Integer> overSixTemp) {
         int sum = 0;
@@ -150,9 +155,10 @@ public class C1207RecurPermutation {
         }
     }
 
+//        Permutation For loop
 
     static void permuRecur(List<Integer> l, int n, List<List<Integer>> permu,
-                           boolean[] visited, int start, List<Integer> temp) {
+                           boolean[] visited, List<Integer> temp) {
         if (temp.size() == n) {
             permu.add(new ArrayList<>(temp));
         } else {
@@ -160,7 +166,7 @@ public class C1207RecurPermutation {
                 if (!visited[i]) {
                     visited[i] = true;
                     temp.add(l.get(i));
-                    permuRecur(l, n, permu, visited, 0, temp);
+                    permuRecur(l, n, permu, visited, temp);
                     visited[i] = false;
                     temp.remove(temp.size() - 1);
                 }
@@ -168,3 +174,37 @@ public class C1207RecurPermutation {
         }
     }
 }
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/87946
+//class Solution {
+//    static int answer;
+//
+//    public int solution(int k, int[][] dungeons) {
+//        boolean[] visited = new boolean[dungeons.length];
+//        recur(dungeons, visited, k, 0, 0);
+//        System.out.println(answer);
+//        return answer;
+//    }
+//
+//    static void recur(int[][] dungeons, boolean[] visited, int k, int count, int p) {
+//        if (count == dungeons.length) {
+//            if (answer < p) {
+//                answer = p;
+//            }
+//            return;
+//        } else {
+//            for (int i = 0; i < dungeons.length; i++) {
+//                 if (!visited[i] && (dungeons[i][0] <= k)){
+//                    visited[i] = true;
+//                    k = k - dungeons[i][1];
+//                    p++;
+//                    recur(dungeons, visited, k, count + 1, p);
+//                    k = k + dungeons[i][1];
+//                    p--;
+//                    visited[i] = false;
+//                }
+//                recur(dungeons, visited, k, count + 1, p);
+//            }
+//        }
+//    }
+//}
