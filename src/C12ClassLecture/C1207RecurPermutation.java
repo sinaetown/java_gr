@@ -7,7 +7,7 @@ public class C1207RecurPermutation {
     static int answer = 0;
 
     public static void main(String[] args) {
-//        Permutation For loop
+//        Basic Permutation
         List<Integer> l = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
         int n = 2;
 
@@ -59,7 +59,7 @@ public class C1207RecurPermutation {
     }
 
 
-    //    전체 순열에서 합계가 가장 값 (합) 찾기
+    //     3개 순열에서 합계가 가장 값 (합) 찾기
     static void findMax2(List<Integer> l, int n,
                          boolean[] findMax2Visited, int temp, int count) {
         if (count == n) {
@@ -155,7 +155,7 @@ public class C1207RecurPermutation {
         }
     }
 
-//        Permutation For loop
+//        Basic Permutation
 
     static void permuRecur(List<Integer> l, int n, List<List<Integer>> permu,
                            boolean[] visited, List<Integer> temp) {
@@ -174,37 +174,3 @@ public class C1207RecurPermutation {
         }
     }
 }
-
-//https://school.programmers.co.kr/learn/courses/30/lessons/87946
-//class Solution {
-//    static int answer;
-//
-//    public int solution(int k, int[][] dungeons) {
-//        boolean[] visited = new boolean[dungeons.length];
-//        recur(dungeons, visited, k, 0, 0);
-//        System.out.println(answer);
-//        return answer;
-//    }
-//
-//    static void recur(int[][] dungeons, boolean[] visited, int k, int count, int p) {
-//        if (count == dungeons.length) {
-//            if (answer < p) {
-//                answer = p;
-//            }
-//            return;
-//        } else {
-//            for (int i = 0; i < dungeons.length; i++) {
-//                 if (!visited[i] && (dungeons[i][0] <= k)){
-//                    visited[i] = true;
-//                    k = k - dungeons[i][1];
-//                    p++;
-//                    recur(dungeons, visited, k, count + 1, p);
-//                    k = k + dungeons[i][1];
-//                    p--;
-//                    visited[i] = false;
-//                }
-//                recur(dungeons, visited, k, count + 1, p);
-//            }
-//        }
-//    }
-//}

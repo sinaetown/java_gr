@@ -3,6 +3,7 @@ package C16EtcClass;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.temporal.ChronoField;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -42,5 +43,28 @@ public class C1602Calendar {
         System.out.println("<Printing out using LocalDateTime.now()>");
         LocalDateTime presentDateTime = LocalDateTime.now();
         System.out.println(presentDateTime);
+
+//        임의로 특정시간을 만들어 내고 싶을 때 : of 메서드 사용
+        LocalDate birthday = LocalDate.of(1980, 02, 19);
+//        일반 내장 메서드
+        System.out.println(birthday.getYear());
+        System.out.println(birthday.getMonth());
+        System.out.println(birthday.getDayOfMonth());
+
+        LocalTime birthtime = LocalTime.of(17, 18, 39);
+        System.out.println(birthtime);
+        LocalDateTime birthdayTime = LocalDateTime.of(birthday, birthtime);
+
+//        크로노필드 enum 타입 사용
+//        매개변수로 크로노필드를 받아서 프로그램의 유연성 향상
+        System.out.println("Year : " + birthdayTime.get(ChronoField.YEAR));
+        System.out.println("Month of Year : " + birthdayTime.get(ChronoField.MONTH_OF_YEAR));
+//        0은 오전, 1은 오후
+        if (birthdayTime.get(ChronoField.AMPM_OF_DAY) == 0) {
+            System.out.println("AM");
+        } else {
+            System.out.println("PM");
+        }
+
     }
 }

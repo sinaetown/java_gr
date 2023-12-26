@@ -103,6 +103,9 @@ public class C1505StreamAPI1 {
 //        reduce : 누적 연산
 //        초기값을 지정하지 않으면 optional 객체를 return한다
 //        Optional 객체 : 값이 있을 수도, 없을 수도 있다는 것을 명시한 타입 (Java8 이후 추가)
+//        Optional.of()는 값이 있다는 것을 명시
+//        Optional.ofNullable()는 값이 없다는 것을 명시
+
         Optional<String> myOptional = Optional.ofNullable("Hello");
         if (myOptional.isPresent()) {
             System.out.println(myOptional.get().length());
